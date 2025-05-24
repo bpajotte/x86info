@@ -24,7 +24,7 @@ CFLAGS += -Wstrict-prototypes -Wmissing-prototypes
 CFLAGS += -Wswitch-enum
 CFLAGS += -Wundef
 CFLAGS += -Wwrite-strings
-
+CFLAGS += -static
 CFLAGS += -Werror
 
 LDFLAGS = -Wl,-z,relro,-z,now
@@ -40,7 +40,7 @@ LSMSR_TMP_HEADERS=AMD_k8.h \
 	generic_msr.h
 
 %.h: %.regs createheader.py
-	@python createheader.py $< `basename $< .regs` >$@
+	@python3 createheader.py $< `basename $< .regs` >$@
 
 LSMSR_SRC = \
 	lsmsr.c \

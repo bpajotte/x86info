@@ -381,6 +381,569 @@
     KernelGSBase:64
 }
 
+{VMX_BASIC=0x480;VMX basic capabilities
+    Revision:31
+    :12
+    VmcsSize:13
+    :4
+    SmmExit:1
+    VmcsCache:4;0=UC;6=WB
+    StrIoExtra:1
+    Lie:1
+    :33
+}
+{VMX_PINBASED_CTLS=0x481;VMX PIN capabilities
+    Irq_0:1
+    :2
+    Nmi_0:1
+    :1
+    VNmi_0:1
+    Timer_0:1
+    Posted_0:1
+    :24
+    Irq_1:1
+    :2
+    Nmi_1:1
+    :1
+    VNmi_1:1
+    Timer_1:1
+    Posted_1:1
+}
+{VMX_TRUE_PINBASED_CTLS=0x48D;VMX PIN capabilities
+    Irq_0:1
+    :2
+    Nmi_0:1
+    :1
+    VNmi_0:1
+    Timer_0:1
+    Posted_0:1
+    :24
+    Irq_1:1
+    :2
+    Nmi_1:1
+    :1
+    VNmi_1:1
+    Timer_1:1
+    Posted_1:1
+}
+
+{VMX_PROCBASED_CTLS=0x482;VMX PROC capabilities
+    :2
+    Allow0_IrqWindow:1
+    Allow0_TscOffset:1
+    :3
+    Allow0_Hlt:1
+    :1
+    Allow0_Invlpg:1
+    Allow0_Mwait:1
+    Allow0_Rdpmc:1
+    Allow0_Rdtsc:1
+    Allow0_RdCr3:1
+    Allow0_WrCr3:1
+    Allow0_Proc3:1
+    Allow0_RdCr8:1
+    Allow0_WrCr8:1
+    Allow0_TprShadow:1
+    Allow0_NmiWindow:1
+    Allow0_MovDr:1
+    Allow0_AllIo:1
+    Allow0_IoBitmap:1
+    Allow0_Mtf:1
+    Allow0_MsrBitmap:1
+    Allow0_Monitor:1
+    Allow0_Pause:1
+    Allow0_Proc:1
+
+    :2
+    Allow1_IrqWindow:1
+    Allow1_TscOffset:1
+    :3
+    Allow1_Hlt:1
+    :1
+    Allow1_Invlpg:1
+    Allow1_Mwait:1
+    Allow1_Rdpmc:1
+    Allow1_Rdtsc:1
+    Allow1_RdCr3:1
+    Allow1_WrCr3:1
+    Allow1_Proc3:1
+    Allow1_RdCr8:1
+    Allow1_WrCr8:1
+    Allow1_TprShadow:1
+    Allow1_NmiWindow:1
+    Allow1_MovDr:1
+    Allow1_AllIo:1
+    Allow1_IoBitmap:1
+    Allow1_Mtf:1
+    Allow1_MsrBitmap:1
+    Allow1_Monitor:1
+    Allow1_Pause:1
+    Allow1_Proc:1
+}
+{VMX_TRUE_PROCBASED_CTLS=0x48E;VMX PROC capabilities
+    :2
+    Allow0_IrqWindow:1
+    Allow0_TscOffset:1
+    :3
+    Allow0_Hlt:1
+    :1
+    Allow0_Invlpg:1
+    Allow0_Mwait:1
+    Allow0_Rdpmc:1
+    Allow0_Rdtsc:1
+    Allow0_RdCr3:1
+    Allow0_WrCr3:1
+    Allow0_Proc3:1
+    Allow0_RdCr8:1
+    Allow0_WrCr8:1
+    Allow0_TprShadow:1
+    Allow0_NmiWindow:1
+    Allow0_MovDr:1
+    Allow0_AllIo:1
+    Allow0_IoBitmap:1
+    Allow0_Mtf:1
+    Allow0_MsrBitmap:1
+    Allow0_Monitor:1
+    Allow0_Pause:1
+    Allow0_Proc:1
+
+    :2
+    Allow1_IrqWindow:1
+    Allow1_TscOffset:1
+    :3
+    Allow1_Hlt:1
+    :1
+    Allow1_Invlpg:1
+    Allow1_Mwait:1
+    Allow1_Rdpmc:1
+    Allow1_Rdtsc:1
+    Allow1_RdCr3:1
+    Allow1_WrCr3:1
+    Allow1_Proc3:1
+    Allow1_RdCr8:1
+    Allow1_WrCr8:1
+    Allow1_TprShadow:1
+    Allow1_NmiWindow:1
+    Allow1_MovDr:1
+    Allow1_AllIo:1
+    Allow1_IoBitmap:1
+    Allow1_Mtf:1
+    Allow1_MsrBitmap:1
+    Allow1_Monitor:1
+    Allow1_Pause:1
+    Allow1_Proc:1
+}
+
+{VMX_PROCBASED_CTLS2=0x488;VMX PROC2 capabilities
+    Allow0_ApicAccess:1
+    Allow0_Ept:1
+    Allow0_XdtExit:1
+    Allow0_Rdtscp:1
+    Allow0_X2Apic:1
+    Allow0_Vpid:1
+    Allow0_Wbinvd:1
+    Allow0_RealMode:1
+    Allow0_ApicReg:1
+    Allow0_VIrq:1
+    Allow0_PauseLoop:1
+    Allow0_RdRand:1
+    Allow0_Invpcid:1
+    Allow0_Vmfunc:1
+    Allow0_VmcsShadow:1
+    Allow0_Encls:1
+    Allow0_RdSeed:1
+    Allow0_Pml:1
+    Allow0_Ve:1
+    Allow0_HidePt:1
+    Allow0_Xsaves:1
+    Allow0_Pasid:1
+    Allow0_Mbec:1
+    Allow0_SubPage:1
+    Allow0_PtGpa:1
+    Allow0_TscScale:1
+    Allow0_UMwait:1
+    Allow0_Pconfig:1
+    Allow0_Enclv:1
+    Allow0_BusLock:1
+    Allow0_Timeout:1
+
+    Allow1_ApicAccess:1
+    Allow1_Ept:1
+    Allow1_XdtExit:1
+    Allow1_Rdtscp:1
+    Allow1_X2Apic:1
+    Allow1_Vpid:1
+    Allow1_Wbinvd:1
+    Allow1_RealMode:1
+    Allow1_ApicReg:1
+    Allow1_VIrq:1
+    Allow1_PauseLoop:1
+    Allow1_RdRand:1
+    Allow1_Invpcid:1
+    Allow1_Vmfunc:1
+    Allow1_VmcsShadow:1
+    Allow1_Encls:1
+    Allow1_RdSeed:1
+    Allow1_Pml:1
+    Allow1_Ve:1
+    Allow1_HidePt:1
+    Allow1_Xsaves:1
+    Allow1_Pasid:1
+    Allow1_Mbec:1
+    Allow1_SubPage:1
+    Allow1_PtGpa:1
+    Allow1_TscScale:1
+    Allow1_UMwait:1
+    Allow1_Pconfig:1
+    Allow1_Enclv:1
+    Allow1_BusLock:1
+    Allow1_Timeout:1
+}
+{VMX_PROCBASED_CTLS3=0x492;VMX PROC3 capabilities
+    Allow0_Loadiwkey:1
+    Allow0_Hlat:1
+    Allow0_EptPagingWr:1
+    Allow0_PageVerif:1
+    Allow0_Ipi:1
+    Allow0_RdWrMsrList:1
+    Allow0_SpedCtl:1
+    Allow0_Allow1:32
+    :24
+
+    Allow1_Loadiwkey:1
+    Allow1_Hlat:1
+    Allow1_EptPagingWr:1
+    Allow1_PageVerif:1
+    Allow1_Ipi:1
+    Allow1_RdWrMsrList:1
+    Allow1_SpedCtl:1
+    Allow1_Allow1:32
+    :24
+}
+{VMX_EXIT_CTLS=0x483;VMX EXIT capabilities
+    :2
+    Allow0_SaveDebug:1
+    :5
+    Allow0_HostLong:1
+    :2
+    Allow0_LoadPerf:1
+    :2
+    Allow0_AckIrq:1
+    :2
+    Allow0_SavePat:1
+    Allow0_LoadPat:1
+    Allow0_SaveEfer:1
+    Allow0_LoadEfer:1
+    Allow0_SaveTimer:1
+    Allow0_ClearBndcfgs:1
+    Allow0_HideVmxPt:1
+    Allow0_ClearRtit:1
+    Allow0_ClearLbr:1
+    Allow0_ClearUinv:1
+    Allow0_LoadCet:1
+    Allow0_LoadPkrs:1
+    Allow0_SavePerf:1
+    Allow0_Exit2:1
+
+    :2
+    Allow1_SaveDebug:1
+    :5
+    Allow1_HostLong:1
+    :2
+    Allow1_LoadPerf:1
+    :2
+    Allow1_AckIrq:1
+    :2
+    Allow1_SavePat:1
+    Allow1_LoadPat:1
+    Allow1_SaveEfer:1
+    Allow1_LoadEfer:1
+    Allow1_SaveTimer:1
+    Allow1_ClearBndcfgs:1
+    Allow1_HideVmxPt:1
+    Allow1_ClearRtit:1
+    Allow1_ClearLbr:1
+    Allow1_ClearUinv:1
+    Allow1_LoadCet:1
+    Allow1_LoadPkrs:1
+    Allow1_SavePerf:1
+    Allow1_Exit2:1
+}
+{VMX_TRUE_EXIT_CTLS=0x48f;VMX EXIT capabilities
+    :2
+    Allow0_SaveDebug:1
+    :5
+    Allow0_HostLong:1
+    :2
+    Allow0_LoadPerf:1
+    :2
+    Allow0_AckIrq:1
+    :2
+    Allow0_SavePat:1
+    Allow0_LoadPat:1
+    Allow0_SaveEfer:1
+    Allow0_LoadEfer:1
+    Allow0_SaveTimer:1
+    Allow0_ClearBndcfgs:1
+    Allow0_HideVmxPt:1
+    Allow0_ClearRtit:1
+    Allow0_ClearLbr:1
+    Allow0_ClearUinv:1
+    Allow0_LoadCet:1
+    Allow0_LoadPkrs:1
+    Allow0_SavePerf:1
+    Allow0_Exit2:1
+
+    :2
+    Allow1_SaveDebug:1
+    :5
+    Allow1_HostLong:1
+    :2
+    Allow1_LoadPerf:1
+    :2
+    Allow1_AckIrq:1
+    :2
+    Allow1_SavePat:1
+    Allow1_LoadPat:1
+    Allow1_SaveEfer:1
+    Allow1_LoadEfer:1
+    Allow1_SaveTimer:1
+    Allow1_ClearBndcfgs:1
+    Allow1_HideVmxPt:1
+    Allow1_ClearRtit:1
+    Allow1_ClearLbr:1
+    Allow1_ClearUinv:1
+    Allow1_LoadCet:1
+    Allow1_LoadPkrs:1
+    Allow1_SavePerf:1
+    Allow1_Exit2:1
+}
+
+{VMX_EXIT_CTLS2=0x493;VMX EXIT2 capabilities
+    :3
+    Allow0_EarlyBusyShadowStack:1
+    :28
+    
+    :3
+    Allow1_EarlyBusyShadowStack:1
+    :28
+}
+{VMX_ENTRY_CTLS=0x484;VMX ENTRY capabilities
+    :2
+    Allow0_LoadDebug:1
+    :5
+    Allow0_GuestLong:1
+    Allow0_GuestSmm:1
+    Allow0_DisableSmiMonitor:1
+    :1
+    Allow0_LoadPerf:1
+    Allow0_LoadPat:1
+    Allow0_LoadEfer:1
+    Allow0_LoadBndCfg:1
+    Allow0_HideVmxPt:1
+    Allow0_LoadRtit:1
+    Allow0_LoadUniv:1
+    Allow0_LoadCet:1
+    Allow0_LoadLbr:1
+    Allow0_LoadPkrs:1
+    :10
+
+    :2
+    Allow1_LoadDebug:1
+    :5
+    Allow1_GuestLong:1
+    Allow1_GuestSmm:1
+    Allow1_DisableSmiMonitor:1
+    :1
+    Allow1_LoadPerf:1
+    Allow1_LoadPat:1
+    Allow1_LoadEfer:1
+    Allow1_LoadBndCfg:1
+    Allow1_HideVmxPt:1
+    Allow1_LoadRtit:1
+    Allow1_LoadUniv:1
+    Allow1_LoadCet:1
+    Allow1_LoadLbr:1
+    Allow1_LoadPkrs:1
+    :10 
+}
+{VMX_TRUE_ENTRY_CTLS=0x490;VMX ENTRY capabilities
+    :2
+    Allow0_LoadDebug:1
+    :5
+    Allow0_GuestLong:1
+    Allow0_GuestSmm:1
+    Allow0_DisableSmiMonitor:1
+    :1
+    Allow0_LoadPerf:1
+    Allow0_LoadPat:1
+    Allow0_LoadEfer:1
+    Allow0_LoadBndCfg:1
+    Allow0_HideVmxPt:1
+    Allow0_LoadRtit:1
+    Allow0_LoadUniv:1
+    Allow0_LoadCet:1
+    Allow0_LoadLbr:1
+    Allow0_LoadPkrs:1
+    :10
+
+    :2
+    Allow1_LoadDebug:1
+    :5
+    Allow1_GuestLong:1
+    Allow1_GuestSmm:1
+    Allow1_DisableSmiMonitor:1
+    :1
+    Allow1_LoadPerf:1
+    Allow1_LoadPat:1
+    Allow1_LoadEfer:1
+    Allow1_LoadBndCfg:1
+    Allow1_HideVmxPt:1
+    Allow1_LoadRtit:1
+    Allow1_LoadUniv:1
+    Allow1_LoadCet:1
+    Allow1_LoadLbr:1
+    Allow1_LoadPkrs:1
+    :10 
+}
+ 
+ 
+{VMX_MISC=0x485;VMX MISC
+}
+ 
+{VMX_CRAllow0_FIXED0=0x486;VMX CR0 Fixed0
+    PE:1
+    MP:1
+    EM:1
+    TS:1
+    ET:1
+    NE:1
+    :10
+    WP:1
+    :1
+    AM:1
+    :10
+    NW:1
+    CD:1
+    PG:1
+}
+
+{VMX_CRAllow0_FIXED1=0x487;VMX CR0 Fixed1
+    PE:1
+    MP:1
+    EM:1
+    TS:1
+    ET:1
+    NE:1
+    :10
+    WP:1
+    :1
+    AM:1
+    :10
+    NW:1
+    CD:1
+    PG:1
+}
+
+{VMX_CR4_FIXED0=0x488;VMX CR4 Fixed0
+    VME:1
+    PVI:1
+    TSD:1
+    DE:1
+    PSE:1
+    PAE:1
+    MCE:1
+    PGE:1
+    PCE:1
+    OSDXSR:1
+    UMIP:1
+    VA57:1
+    VMXE:1
+    SVME:1
+    SEE:1
+    FSGSBASE:1
+    PCIDE:1
+    OSXSAVE:1
+    KL:1
+    SMEP:1
+    SMAP:1
+    PKE:1
+    CET:1
+    PKS:1
+    UINTR:1
+    :1
+    LASS:1
+    LAM:1
+}
+
+{VMX_CR4_FIXED1=0x489;VMX CR4 Fixed1 
+    VME:1
+    PVI:1
+    TSD:1
+    DE:1
+    PSE:1
+    PAE:1
+    MCE:1
+    PGE:1
+    PCE:1
+    OSDXSR:1
+    UMIP:1
+    VA57:1
+    VMXE:1
+    SVME:1
+    SEE:1
+    FSGSBASE:1
+    PCIDE:1
+    OSXSAVE:1
+    KL:1
+    SMEP:1
+    SMAP:1
+    PKE:1
+    CET:1
+    PKS:1
+    UINTR:1
+    :1
+    LASS:1
+    LAM:1
+    :3
+    FRED:1
+}
+{VMX_VMCS_ENUM=0x48a;VMX CR0 0 capabilities
+    :1
+    MaxIndex:8
+}
+
+{VMX_EPT_VPID_CAP=0x48c;VMX CR0 0 capabilities
+    ExecOnly:1
+    :5
+    PageWalk4:1
+    PageWalk5:1
+    EptUc:1
+    :5
+    EptWb:1
+    :1
+    2M:1
+    1G:1
+    :2
+    Invept:1
+    EptAdBits:1
+    EptViolExtra:1
+    ShadowStack:1
+    :1
+    InveptSingle:1
+    InveptAll:1
+    :5
+    Invvpid:1
+    :7
+    InvpidAddress:1
+    InvpidSingle:1
+    InvpidAll:1
+    InvpidGlobal:1
+    :5
+    HlatPrefix:6
+}
+
+
 ### Local Variables: ###
 ### mode:shell-script ###
 ### End: ###

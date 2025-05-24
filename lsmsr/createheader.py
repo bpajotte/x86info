@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # Author: Andreas Herrmann <andreas.herrmann3@amd.com>
 #
