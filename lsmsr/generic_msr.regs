@@ -381,16 +381,18 @@
     KernelGSBase:64
 }
 
-{VMX_BASIC=0x480;VMX basic capabilities
+{VMX_BASIC=0x480;VMX basic capabilities 
     Revision:31
-    :12
+    :1
     VmcsSize:13
-    :4
+    :3 
+    VmcsWidth:1
     SmmExit:1
     VmcsCache:4;0=UC;6=WB
     StrIoExtra:1
     Lie:1
-    :33
+    VmEntryHdwareExc:1
+    :7
 }
 {VMX_PINBASED_CTLS=0x481;VMX PIN capabilities
     Irq_0:1
@@ -434,20 +436,23 @@
     :3
     Allow0_Hlt:1
     :1
-    Allow0_Invlpg:1
+    Allow0_Invlpg:1 
     Allow0_Mwait:1
     Allow0_Rdpmc:1
     Allow0_Rdtsc:1
-    Allow0_RdCr3:1
+    :2
     Allow0_WrCr3:1
+    Allow0_RdCr3:1
     Allow0_Proc3:1
-    Allow0_RdCr8:1
+    :1
     Allow0_WrCr8:1
+    Allow0_RdCr8:1
     Allow0_TprShadow:1
     Allow0_NmiWindow:1
     Allow0_MovDr:1
     Allow0_AllIo:1
     Allow0_IoBitmap:1
+    :1
     Allow0_Mtf:1
     Allow0_MsrBitmap:1
     Allow0_Monitor:1
@@ -464,16 +469,19 @@
     Allow1_Mwait:1
     Allow1_Rdpmc:1
     Allow1_Rdtsc:1
-    Allow1_RdCr3:1
+    :2
     Allow1_WrCr3:1
+    Allow1_RdCr3:1
     Allow1_Proc3:1
-    Allow1_RdCr8:1
+    :1
     Allow1_WrCr8:1
+    Allow1_rdCr8:1
     Allow1_TprShadow:1
     Allow1_NmiWindow:1
     Allow1_MovDr:1
     Allow1_AllIo:1
     Allow1_IoBitmap:1
+    :1
     Allow1_Mtf:1
     Allow1_MsrBitmap:1
     Allow1_Monitor:1
@@ -491,16 +499,19 @@
     Allow0_Mwait:1
     Allow0_Rdpmc:1
     Allow0_Rdtsc:1
-    Allow0_RdCr3:1
+    :2
     Allow0_WrCr3:1
+    Allow0_RdCr3:1
     Allow0_Proc3:1
-    Allow0_RdCr8:1
+    :1
     Allow0_WrCr8:1
+    Allow0_RdCr8:1
     Allow0_TprShadow:1
     Allow0_NmiWindow:1
     Allow0_MovDr:1
     Allow0_AllIo:1
     Allow0_IoBitmap:1
+    :1
     Allow0_Mtf:1
     Allow0_MsrBitmap:1
     Allow0_Monitor:1
@@ -517,16 +528,19 @@
     Allow1_Mwait:1
     Allow1_Rdpmc:1
     Allow1_Rdtsc:1
-    Allow1_RdCr3:1
+    :2
     Allow1_WrCr3:1
+    Allow1_RdCr3:1
     Allow1_Proc3:1
-    Allow1_RdCr8:1
+    :1
     Allow1_WrCr8:1
+    Allow1_rdCr8:1
     Allow1_TprShadow:1
     Allow1_NmiWindow:1
     Allow1_MovDr:1
     Allow1_AllIo:1
     Allow1_IoBitmap:1
+    :1
     Allow1_Mtf:1
     Allow1_MsrBitmap:1
     Allow1_Monitor:1
@@ -534,7 +548,7 @@
     Allow1_Proc:1
 }
 
-{VMX_PROCBASED_CTLS2=0x488;VMX PROC2 capabilities
+{VMX_PROCBASED_CTLS2=0x48B;VMX PROC2 capabilities
     Allow0_ApicAccess:1
     Allow0_Ept:1
     Allow0_XdtExit:1
@@ -564,6 +578,7 @@
     Allow0_UMwait:1
     Allow0_Pconfig:1
     Allow0_Enclv:1
+    :1
     Allow0_BusLock:1
     Allow0_Timeout:1
 
@@ -596,6 +611,7 @@
     Allow1_UMwait:1
     Allow1_Pconfig:1
     Allow1_Enclv:1
+    :1
     Allow1_BusLock:1
     Allow1_Timeout:1
 }
@@ -605,9 +621,9 @@
     Allow0_EptPagingWr:1
     Allow0_PageVerif:1
     Allow0_Ipi:1
+    :1
     Allow0_RdWrMsrList:1
-    Allow0_SpedCtl:1
-    Allow0_Allow1:32
+    Allow0_SpecCtl:1
     :24
 
     Allow1_Loadiwkey:1
@@ -615,15 +631,15 @@
     Allow1_EptPagingWr:1
     Allow1_PageVerif:1
     Allow1_Ipi:1
+    :1
     Allow1_RdWrMsrList:1
-    Allow1_SpedCtl:1
-    Allow1_Allow1:32
+    Allow1_SpecCtl:1
     :24
 }
 {VMX_EXIT_CTLS=0x483;VMX EXIT capabilities
     :2
     Allow0_SaveDebug:1
-    :5
+    :6
     Allow0_HostLong:1
     :2
     Allow0_LoadPerf:1
@@ -647,7 +663,7 @@
 
     :2
     Allow1_SaveDebug:1
-    :5
+    :6
     Allow1_HostLong:1
     :2
     Allow1_LoadPerf:1
@@ -672,7 +688,7 @@
 {VMX_TRUE_EXIT_CTLS=0x48f;True VMX EXIT capabilities
     :2
     Allow0_SaveDebug:1
-    :5
+    :6
     Allow0_HostLong:1
     :2
     Allow0_LoadPerf:1
@@ -696,7 +712,7 @@
 
     :2
     Allow1_SaveDebug:1
-    :5
+    :6
     Allow1_HostLong:1
     :2
     Allow1_LoadPerf:1
@@ -731,7 +747,7 @@
 {VMX_ENTRY_CTLS=0x484;VMX ENTRY capabilities
     :2
     Allow0_LoadDebug:1
-    :5
+    :6
     Allow0_GuestLong:1
     Allow0_GuestSmm:1
     Allow0_DisableSmiMonitor:1
@@ -746,11 +762,11 @@
     Allow0_LoadCet:1
     Allow0_LoadLbr:1
     Allow0_LoadPkrs:1
-    :10
+    :9
 
     :2
     Allow1_LoadDebug:1
-    :5
+    :6
     Allow1_GuestLong:1
     Allow1_GuestSmm:1
     Allow1_DisableSmiMonitor:1
@@ -765,12 +781,12 @@
     Allow1_LoadCet:1
     Allow1_LoadLbr:1
     Allow1_LoadPkrs:1
-    :10 
+    :9 
 }
 {VMX_TRUE_ENTRY_CTLS=0x490;True VMX ENTRY capabilities
     :2
     Allow0_LoadDebug:1
-    :5
+    :6
     Allow0_GuestLong:1
     Allow0_GuestSmm:1
     Allow0_DisableSmiMonitor:1
@@ -785,11 +801,11 @@
     Allow0_LoadCet:1
     Allow0_LoadLbr:1
     Allow0_LoadPkrs:1
-    :10
+    :9
 
     :2
     Allow1_LoadDebug:1
-    :5
+    :6
     Allow1_GuestLong:1
     Allow1_GuestSmm:1
     Allow1_DisableSmiMonitor:1
@@ -804,11 +820,27 @@
     Allow1_LoadCet:1
     Allow1_LoadLbr:1
     Allow1_LoadPkrs:1
-    :10 
+    :9 
 }
  
  
 {VMX_MISC=0x485;VMX MISC
+    VMXTSC:5
+    EFERLMA:1
+    ActState1:1
+    ActState2:1
+    ActState3:1
+    :5
+    IntelPT:1
+    RDMSRinSMM:1
+    CR3Vals:9
+    MaxMSRs:3
+    SMMMonCtrl:1
+    VMWrite:1
+    VMEntryExcept:1
+    :1
+    MSEGRevision:32
+    
 }
  
 {VMX_CR0_FIXED0=0x486;VMX CR0 Fixed0
@@ -855,11 +887,12 @@
     MCE:1
     PGE:1
     PCE:1
-    OSDXSR:1
+    OSFXSR:1
+    OSXMMEXCPT:1
     UMIP:1
     VA57:1
     VMXE:1
-    SVME:1
+    SMXE:1
     SEE:1
     FSGSBASE:1
     PCIDE:1
@@ -874,6 +907,8 @@
     :1
     LASS:1
     LAM:1
+    :3
+    FRED:1
 }
 
 {VMX_CR4_FIXED1=0x489;VMX CR4 Fixed1 
@@ -910,7 +945,7 @@
 }
 {VMX_VMCS_ENUM=0x48a;VMX VMCS capabilities
     :1
-    MaxIndex:8
+    MaxIndex:9
 }
 
 {VMX_EPT_VPID_CAP=0x48c;VMX VPID capabilities
@@ -939,7 +974,7 @@
     InvpidSingle:1
     InvpidAll:1
     InvpidGlobal:1
-    :5
+    :4
     HlatPrefix:6
 }
 
